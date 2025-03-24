@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск слов в Библии</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/pizzip@3.1.0/dist/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.30.0/docxtemplater.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Поиск слов в Библии</h1>
+        <div class="instructions">
+            <p>Введите текст в поле ниже. Нажмите "Найти слова", чтобы найти слова в Библии.</p>
+            <p>Результаты будут отображены ниже. Вы можете скачать их в формате Word, указав количество копий.</p>
+        </div>
+        <textarea id="inputText" placeholder="Введите стих из Библии..."></textarea>
+        <button id="searchButton">Найти слова</button>
+        <div id="results" class="results"></div>
+        <div id="downloadSection" style="display: none;">
+            <label for="copies">Количество копий (сколько экземпляров хотите получить?):</label>
+            <input type="number" id="copies" min="1" value="1">
+            <button id="downloadButton">Скачать результаты</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
