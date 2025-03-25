@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детский шифратор текста</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/pizzip@3.1.0/dist/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.30.0/docxtemplater.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Детский шифратор текста</h1>
+        <div class="rules">
+            <h2>Правила:</h2>
+            <p>1. Введите текст в поле ниже.</p>
+            <p>2. Нажмите кнопку "Зашифровать".</p>
+            <p>3. Получите зашифрованный текст и таблицу символов.</p>
+            <p>4. Нажмите "Скачать файл", чтобы сохранить результат.</p>
+        </div>
+        <textarea id="inputText" placeholder="Введите текст для шифрования"></textarea>
+        <button id="encryptButton">
+            <span class="icon">🔒</span> Зашифровать
+        </button>
+        <div id="encryptedText" class="encrypted-text"></div>
+        <div id="symbolTable" class="cipher-table">
+            <!-- Таблица будет добавлена через JavaScript -->
+        </div>
+        <div class="copies-input">
+            <label for="copies">Количество копий:</label>
+            <input type="number" id="copies" min="1" value="1">
+            <button id="createCopiesButton">Скачать файл</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
