@@ -1,0 +1,320 @@
+/* Основные стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #7b4397, #dc2430);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    margin: 30px auto;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+/* Модальное окно с улучшенной читаемостью */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background: rgba(0, 0, 0, 0.85) url('фон.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 1000;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    margin: 5% auto;
+    padding: 40px;
+    color: white;
+}
+
+.modal-text {
+    font-family: 'Cinzel Decorative', 'Mayan', cursive;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.modal-text h2 {
+    color: #f8d64e;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.modal-text ol {
+    padding-left: 30px;
+}
+
+.modal-text li {
+    margin-bottom: 18px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.modal-text li:before {
+    content: "•";
+    color: #f8d64e;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+}
+
+.hint {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.2rem;
+    background: rgba(248, 214, 78, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 3px solid #f8d64e;
+}
+
+/* Улучшенный крестик закрытия */
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: #f8d64e;
+    transform: scale(1.1);
+}
+
+.dont-show {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    padding: 12px 25px;
+    background: rgba(248, 214, 78, 0.9);
+    border: none;
+    border-radius: 30px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dont-show:hover {
+    background: rgba(248, 214, 78, 1);
+    transform: translateY(-2px);
+}
+
+/* Кнопки в шапке */
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.back-button, .help-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(248, 214, 78, 0.9);
+    color: #333;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover, .help-button:hover {
+    background: rgba(248, 214, 78, 1);
+    transform: scale(1.1);
+}
+
+/* Основные элементы с улучшенным стилем */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    font-family: 'Cinzel Decorative', cursive;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+button i {
+    font-size: 1.2rem;
+}
+
+#downloadButton {
+    background: linear-gradient(135deg, #27ae60, #219653);
+}
+
+#downloadButton:hover {
+    background: linear-gradient(135deg, #219653, #27ae60);
+}
+
+#maze {
+    margin: 25px 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 15px;
+    overflow: auto;
+    max-width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.cell.wall {
+    background: #2c3e50;
+}
+
+.cell.path {
+    background: #f8f9fa;
+}
+
+.cell.letter {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cell.start {
+    background: #27ae60;
+    color: white;
+    font-size: 16px;
+}
+
+.cell.end {
+    background: #e74c3c;
+    color: white;
+    font-size: 16px;
+}
+
+/* Блокировка мобильных */
+@media (max-width: 768px) {
+    .modal {
+        display: none !important;
+    }
+    .help-button {
+        display: none !important;
+    }
+    
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Подключение шрифта Mayan (аналог) */
+@font-face {
+    font-family: 'Mayan';
+    src: url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
+    font-display: swap;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор примеров</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/pizzip@3.1.0/dist/pizzip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.30.0/docxtemplater.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+  <!-- Модальное окно с инструкциями -->
+  <div id="instructionModal" class="modal">
+    <div class="modal-content">
+      <div class="close-modal">✕</div>
+      <div class="modal-text">
+        <h2>Классическая шифровка</h2>
+        <p>Здесь вы можете зашифровать библейский стих с помощью математических примеров. Это не только заставит пошевелить мозгами, но поможет лучше запомнить стих. Доступны два уровня сложности!</p>
+        <ol>
+          <li>Введите текст.</li>
+          <li>Выберите сложность.</li>
+          <li>Получите текст в котором перемешаны слова и математические примеры.</li>
+          <li>Укажите количество детей, которые будут разгадывать стих. Это нужно для автоматического распределения копий на листе с линиями отреза.</li>
+          <li>Нажмите "Скачать результаты", чтобы сохранить файл. Это редактируемый формат. Его можно распечатать, проверить и дать детям для расшифровки!</li>
+        </ol>
+        <p class="example">Пример: 1) (5 * 5) - 20 = ____________________<br>
+        цифра со скобкой означает порядковый номер слова в стихе<br>
+        результат, который получится после решения примера- порядковый номер слова в запутанном тексте. В нашем примере это 5. Пятое слово в запутанном тексте-первое</p>
+        <p class="hint">(ℹ Подсказку можно вернуть — кликните на знак вопроса)</p>
+      </div>
+      <button class="dont-show">Больше не показывать</button>
+    </div>
+  </div>
+
+  <!-- Основной контент -->
+  <div class="container">
+    <div class="header-buttons">
+      <a href="../index.html" class="back-button">←</a>
+      <button class="help-button">?</button>
+    </div>
+    <h1>Генератор примеров</h1>
+    <textarea id="inputText" placeholder="Введите текст"></textarea>
+    <p>Выберите сложность:</p>
+    <div class="difficulty-buttons">
+      <button id="easyButton">Просто</button>
+      <button id="mediumButton">Средне</button>
+    </div>
+    <div id="output"></div>
+    <div id="downloadSection" style="display: none;">
+      <label for="copies">Количество копий:</label>
+      <input type="number" id="copies" min="1" value="1">
+      <button id="downloadButton">Скачать результаты</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

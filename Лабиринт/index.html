@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор лабиринта</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Модальное окно с инструкциями -->
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">✕</div>
+            <div class="modal-text">
+                <h2>ЛАБИРИНТ</h2>
+                <p>Здесь вы можете спрятать ссылку на библейский стих в лабиринте. Это не просто развлечение. Такой подход поможет лучше запомнить место и это хорошая возможность начать приучать детей работать с Библией, ориентироваться в ней.</p>
+                <ol>
+                    <li>Введите ссылку. Например: Ин 3:16</li>
+                    <li>Получите лабиринт в котором спрятана ссылка.</li>
+                    <li>Нажмите "Скачать лабиринт", чтобы сохранить файл. Его можно распечатать, проверить и дать детям для расшифровки!</li>
+                </ol>
+                <p class="hint">(ℹ Подсказку можно вернуть — кликните на знак вопроса)</p>
+            </div>
+            <button class="dont-show">Больше не показывать</button>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="header-buttons">
+            <a href="../index.html" class="back-button">←</a>
+            <button class="help-button">?</button>
+        </div>
+        <h1>Генератор лабиринта</h1>
+        <input type="text" id="inputText" placeholder="Введите ссылку (например: Ин 3:16)">
+        <button id="generateButton">
+            <i class="fas fa-magic"></i> Сгенерировать лабиринт
+        </button>
+        <div id="maze"></div>
+        <button id="downloadButton">
+            <i class="fas fa-download"></i> Скачать лабиринт
+        </button>
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

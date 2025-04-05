@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание таблицы для детей</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Модальное окно с инструкциями -->
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">✕</div>
+            <div class="modal-text">
+                <h2>Таблица Шульте</h2>
+                <p>Здесь вы можете зашифровать библейский стих с помощью знаменитой таблицы. Подобные таблицы тренируют внимательность и концентрацию, чего так не хватает многим современным детям. Кроме того ученики в процессе расшифровки лучше запомнят стих.</p>
+                <ol>
+                    <li>Введите текст</li>
+                    <li>Нажмите "Создать"</li>
+                    <li>Получите таблицу</li>
+                    <li>Нажмите "Скачать", чтобы сохранить файл. Его можно распечатать, проверить и дать детям для расшифровки!</li>
+                </ol>
+                <p class="rules">Правила очень просты. Находим цифру 1. Буква в ее кружочке - первая в стихе! Затем 2, 3 и т.д.</p>
+                <p class="hint">(ℹ Подсказку можно вернуть — кликните на знак вопроса)</p>
+            </div>
+            <button class="dont-show">Больше не показывать</button>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="main-container">
+        <div class="header">
+            <div class="header-buttons">
+                <a href="../index.html" class="back-button">←</a>
+                <button class="help-button">?</button>
+            </div>
+            <h1><i class="fas fa-table"></i> Создание таблицы</h1>
+        </div>
+        <div class="content">
+            <div class="instructions">
+                <p><strong>Как использовать:</strong> Введите текст и нажмите "Создать".</p>
+            </div>
+
+            <div class="input-section">
+                <textarea id="inputText" placeholder="Введите текст здесь..."></textarea>
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+
+            <div class="buttons">
+                <button id="generateBtn"><i class="fas fa-cogs"></i> Создать</button>
+            </div>
+
+            <div id="resultContainer" class="result-container">
+                <div class="result-page">
+                    <div class="result-half top-half">
+                        <div class="letters-container" id="resultColumn1"></div>
+                        <div class="writing-lines"></div>
+                    </div>
+                    <div class="cut-line">
+                        <div class="solid-line"></div>
+                        <i class="fas fa-cut"></i>
+                        <div class="solid-line"></div>
+                    </div>
+                    <div class="result-half bottom-half">
+                        <div class="letters-container" id="resultColumn2"></div>
+                        <div class="writing-lines"></div>
+                    </div>
+                </div>
+                <div class="download-section" id="downloadSection">
+                    <button id="downloadBtn" disabled><i class="fas fa-download"></i> Скачать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
