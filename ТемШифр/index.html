@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библейский шифратор</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Модальное окно с инструкциями -->
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">✕</div>
+            <div class="modal-text">
+                <h2>Еще одна шифровка!</h2>
+                <p>Но здесь вы можете зашифровать библейский стих с помощью темы вашего урока или центральной мысли, которую дети должны запомнить. Преимущество этого подхода в том, что для расшифровки нужно постоянно возвращаться к теме, что способствует лучшему запоминанию. Чем длиннее тема, тем больше букв зашифруется. Если у вас малыши, то можно использовать очень короткую тему, тогда большая часть стиха не зашифруется. Если ваша тема зашифровывает не все буквы - это нормально.</p>
+                <ol>
+                    <li>Введите ключевой текст или тему урока</li>
+                    <li>Введите библейский стих</li>
+                    <li>Нажмите "Зашифровать"</li>
+                    <li>Получите шифр</li>
+                    <li>Укажите количество детей, которые будут разгадывать стих. Это нужно для автоматического распределения копий на листе с линиями отреза</li>
+                    <li>Нажмите "Скачать DOCX", чтобы сохранить файл. Это редактируемый формат. Его можно распечатать, проверить и дать детям для расшифровки!</li>
+                </ol>
+                <p class="rules">Правила как в самой обычной шифровке</p>
+                <p class="hint">(ℹ Подсказку можно вернуть — кликните на знак вопроса)</p>
+            </div>
+            <button class="dont-show">Больше не показывать</button>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="main-container">
+        <div class="header">
+            <div class="header-buttons">
+                <a href="../index.html" class="back-button">←</a>
+                <button class="help-button">?</button>
+            </div>
+            <h1>Библейский шифратор</h1>
+        </div>
+        
+        <div class="content">
+            <div class="input-section">
+                <textarea id="keyText" placeholder="Ключевой текст (тема урока)..."></textarea>
+                <textarea id="verseText" placeholder="Библейский стих для шифровки..."></textarea>
+            </div>
+            
+            <div class="error-message" id="errorMessage"></div>
+            
+            <button id="generateBtn">Зашифровать</button>
+            
+            <div class="result-container" id="resultContainer">
+                <div class="result-section">
+                    <h3>Ключевые буквы:</h3>
+                    <div class="letters-container" id="lettersContainer"></div>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Зашифрованный текст:</h3>
+                    <div class="encrypted-verse" id="encryptedVerse"></div>
+                </div>
+                
+                <div class="copies-control">
+                    <label for="copies">Количество копий:</label>
+                    <input type="number" id="copies" min="1" value="1">
+                    <button id="downloadBtn">Скачать DOCX</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.30.0/docxtemplater.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/pizzip@3.1.0/dist/pizzip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

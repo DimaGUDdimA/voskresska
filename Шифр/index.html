@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детский шифратор текста</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/pizzip@3.1.0/dist/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.30.0/docxtemplater.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="background-image">
+        <div id="instructionModal" class="modal">
+            <div class="modal-content">
+                <div class="close-modal">✕</div>
+                <div class="modal-text">
+                    <h2>Классическая шифровка</h2>
+                    <p>Здесь вы можете зашифровать библейский стих.</p>
+                    <ol>
+                        <li>Введите текст в поле ниже.</li>
+                        <li>Нажмите кнопку "Зашифровать".</li>
+                        <li>Получите зашифрованный текст и таблицу символов.</li>
+                        <li>Укажите количество детей, которые будут разгадывать шифр. Это нужно для автоматического распределения копий на листе с линиями отреза.</li>
+                        <li>Нажмите "Скачать файл", чтобы сохранить файл. Это редактируемый формат. Его можно распечатать, проверить и дать детям для расшифровки!</li>
+                    </ol>
+                    <p class="hint">(ℹ Подсказку можно вернуть — кликните на знак вопроса на странице)</p>
+                </div>
+                <button class="dont-show">Больше не показывать</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="header-buttons">
+                <a href="../index.html" class="back-button">←</a>
+                <button class="help-button">?</button>
+            </div>
+            <h1>Детский шифратор текста</h1>
+            <div class="rules">
+                <p>1. Введите текст в поле ниже.</p>
+                <p>2. Нажмите кнопку "Зашифровать".</p>
+                <p>3. Получите зашифрованный текст и таблицу символов.</p>
+                <p>4. Нажмите "Скачать файл", чтобы сохранить результат.</p>
+            </div>
+            <textarea id="inputText" placeholder="Введите текст для шифрования"></textarea>
+            <button id="encryptButton">
+                <span class="icon">🔒</span> Зашифровать
+            </button>
+            <div id="encryptedText" class="encrypted-text"></div>
+            <div id="symbolTable" class="cipher-table"></div>
+            <div class="copies-input">
+                <label for="copies">Количество копий:</label>
+                <input type="number" id="copies" min="1" value="1">
+                <button id="createCopiesButton">Скачать файл</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
