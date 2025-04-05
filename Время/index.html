@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифровка временем</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>Шифровка временем</h1>
+            <div class="header-buttons">
+                <button id="helpButton" class="help-button">?</button>
+                <button id="homeButton" class="home-button">Вернуться в главное меню</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="input-section">
+                <textarea id="inputText" placeholder="Введите текст для шифровки..." rows="6"></textarea>
+                <button id="generateBtn">Зашифровать</button>
+            </div>
+            
+            <div class="error-message" id="errorMessage"></div>
+            
+            <div class="result-container" id="resultContainer">
+                <div class="result-section">
+                    <h2>Ключ шифрования</h2>
+                    <div class="key-display" id="keyDisplay"></div>
+                </div>
+                
+                <div class="result-section clocks-section">
+                    <h2>Результат шифрования</h2>
+                    <div class="clocks-grid" id="clocksContainer"></div>
+                </div>
+            </div>
+            
+            <button id="downloadBtn" class="hidden">Скачать PDF</button>
+            <div id="loadingIndicator" class="hidden">Идет генерация PDF...</div>
+        </div>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="sandglass-modal">
+            <div class="sandglass-image-container">
+                <img src="часы.jpeg" alt="Песочные часы" class="sandglass-image">
+                <div class="sandglass-text-content">
+                    <h3>Шифровка библейских стихов с помощью классических часов</h3>
+                    <p>Здесь вы можете зашифровать библейский стих, используя циферблат часов. Введите текст в поле и нажмите кнопку «Зашифровать» — система преобразует текст в позиции часовых стрелок.</p>
+                    <p>После обработки появится ключ к шифру и изображения циферблатов. Нажмите «Скачать PDF», чтобы сохранить файл. Его можно распечатать, проверить и дать детям для расшифровки!</p>
+                    <p>Например: на циферблате время 5:30. Находим это время в ключе. Перед ним написана буква. Первый циферблат скрывает именно эту букву! Расшифровав все циферблаты, дети получат стих. Это не только увлекательно, но и полезно — многие современные дети не умеют определять время по обычным часам.</p>
+                </div>
+                <button id="modalCloseBtn" class="modal-close-btn">❌</button>
+                <button id="disableHelpButton" class="disable-help-button">Больше не показывать</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
