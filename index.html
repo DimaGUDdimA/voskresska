@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощь учителю</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mobile-block {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f5f5f5;
+            z-index: 9999;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        .mobile-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 500px;
+        }
+        .mobile-block h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .mobile-block p {
+            color: #7f8c8d;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        body > .container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="help-btn">?</button>
+
+    <div class="scroll-overlay">
+        <div class="scroll-container">
+            <button class="scroll-close">✕</button>
+            <h2>ПРИВЕТСТВУЮ! ✨📖</h2>
+            <p>Этот сайт создан, чтобы помочь учителям воскресных школ сделать запоминание "золотых стихов" увлекательным с помощью шифров!</p>
+            <p><strong>🔍 Как это работает?</strong><br>Выберите вариант шифрования — дети будут разгадывать стих. Это весело и помогает лучше запомнить библейские истины.</p>
+            <p>В шифрах (кроме лабиринта) мы не используем ссылки. Потому что, как правило, расшифровывают на скорость, и есть искушение расшифровать только ссылку и найти стих в Библии.</p>
+            <p><strong>👉 Просто нажмите</strong> на понравившийся шифр — в каждом разделе есть подробное описание.</p>
+            <p><em>Нажмите на "Больше не показывать" если не хотите видеть это сообщение снова<br>Нажмите на ❌ чтобы просто закрыть<br>(ℹ Подсказку можно вернуть — кликните на знак вопроса на главной странице)</em></p>
+            <p><strong>📩 Нашли ошибки, есть предложения, идеи или просто хотите сказать доброе слово?</strong><br>Пишите на voskresska.dima@mail.ru</p>
+            <p>БЛАГОСЛОВЕНИЙ!</p>
+            <button class="scroll-hide-btn">Больше не показывать</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Помощь учителю</h1>
+        <p class="description">Выберите, что вы хотите сделать:</p>
+
+        <div class="link-block">
+            <a href="Шифр/index.html" class="link">
+                <i class="fas fa-lock"></i> Простая шифровка
+            </a>
+            <p class="link-description">Здесь вы можете зашифровать текст различными символами, указать количество необходимых копий и скачать результат.</p>
+        </div>
+
+        <div class="link-block">
+            <a href="места/index.html" class="link">
+                <i class="fas fa-book"></i> Поиск по Библии
+            </a>
+            <p class="link-description">Здесь вы можете зашифровать библейский стих другими стихами из Писания.</p>
+        </div>
+
+        <div class="link-block">
+            <a href="Лабиринт/index.html" class="link">
+                <i class="fas fa-project-diagram"></i> Лабиринт
+            </a>
+            <p class="link-description">Здесь вы можете разместить ссылку на стих в лабиринте. Подходит для малышей.</p>
+        </div>
+
+        <div class="link-block">
+            <a href="примеры/index.html" class="link">
+                <i class="fas fa-puzzle-piece"></i> Примеры
+            </a>
+            <p class="link-description">Здесь вы можете запутать текст, указать количество необходимых копий и скачать результат.</p>
+        </div>
+
+        <div class="link-block">
+            <a href="поле/index.html" class="link">
+                <i class="fas fa-table"></i> Таблица Шульте
+            </a>
+            <p class="link-description">Тренировка внимания и запоминания библейских стихов.</p>
+        </div>
+
+        <div class="link-block">
+            <a href="ТемШифр/index.html" class="link">
+                <i class="fas fa-lock"></i> Шифр 2 (с темой)
+            </a>
+            <p class="link-description">Здесь вы можете зашифровать текст используя тему или вывод урока.</p>
+        </div>
+
+        <div class="link-block">
+            <a href="Время/index.html" class="link">
+                <i class="fas fa-clock"></i> Время
+            </a>
+            <p class="link-description">Здесь вы можете зашифровать библейский стих временем на классических часах.</p>
+        </div>
+
+        <div class="link-block">
+            <a href="Морской Бой/index.html" class="link">
+                <i class="fas fa-ship"></i> Морской Бой
+            </a>
+            <p class="link-description">Здесь вы можете зашифровать библейский стих в виде игры "Морской бой" - дети будут искать буквы стиха, "расстреливая" клетки на поле.</p>
+        </div>
+    </div>
+
+    <div class="mobile-block">
+        <div class="mobile-content">
+            <h1>Приветствую!</h1>
+            <p>Откройте, пожалуйста, этот сайт на компьютере.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function isMobileDevice() {
+                const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                const userAgent = navigator.userAgent.toLowerCase();
+                const isMobileUA = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile/i.test(userAgent);
+                const isSmallScreen = window.innerWidth < 768;
+                const isiPadPro = navigator.platform === 'MacIntel' && hasTouch;
+                return (hasTouch && (isMobileUA || isSmallScreen)) || isiPadPro;
+            }
+
+            if (isMobileDevice()) {
+                document.querySelector('.mobile-block').style.display = 'block';
+            } else {
+                document.querySelector('.container').style.display = 'block';
+                const scrollOverlay = document.querySelector('.scroll-overlay');
+                const helpBtn = document.querySelector('.help-btn');
+                if (!localStorage.getItem('hideScroll')) {
+                    scrollOverlay.style.display = 'flex';
+                }
+                document.querySelector('.scroll-close').addEventListener('click', function() {
+                    scrollOverlay.style.display = 'none';
+                });
+                document.querySelector('.scroll-hide-btn').addEventListener('click', function() {
+                    localStorage.setItem('hideScroll', 'true');
+                    scrollOverlay.style.display = 'none';
+                });
+                helpBtn.addEventListener('click', function() {
+                    scrollOverlay.style.display = 'flex';
+                });
+            }
+        });
+    </script>
+    <script src="https://cdn.counter.dev/script.js" data-id="DimaGUDdimAvoskresska" data-utcoffset="3"></script>
+</body>
+</html>

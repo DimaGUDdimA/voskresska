@@ -1,0 +1,334 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: 5% auto;
+    padding: 30px;
+    background: url('фон.png') center/cover no-repeat; /* Картинка без белого наложения */
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 2px solid #2c3e50;
+}
+
+.modal-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.01); /* Очень прозрачный белый фон для текста */
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(2px); /* Легкое размытие для лучшей читаемости */
+}
+
+.rules {
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.3); /* Чуть менее прозрачный фон для важного текста */
+    border-radius: 5px;
+    border-left: 3px solid #2c3e50;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e74c3c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dont-show {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.header {
+    background: linear-gradient(45deg, #2c3e50, #4ca1af);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.back-button, .help-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.content {
+    padding: 20px;
+}
+
+.input-section textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    resize: vertical;
+    font-size: 1rem;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fde8e8;
+    border-radius: 5px;
+    display: none;
+}
+
+#encryptBtn, #downloadBtn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#encryptBtn {
+    background: #2c3e50;
+    color: white;
+}
+
+#downloadBtn {
+    background: #27ae60;
+    color: white;
+}
+
+/* Сетка и ключ */
+.grid-and-key {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Скрываем основную сетку, оставляем только для PDF */
+#gridContainer {
+    display: none !important;
+}
+
+.grid-container, .pdf-grid-container {
+    display: grid;
+    grid-template-columns: 30px repeat(12, 1fr);
+    gap: 1px;
+    flex-shrink: 0;
+}
+
+.grid-cell {
+    border: 1px solid #000;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0;
+}
+
+.grid-header {
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+.key-container {
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #2c3e50;
+    display: none;
+    column-count: 2;
+    column-gap: 10px;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.key-item {
+    margin-bottom: 3px;
+    break-inside: avoid;
+}
+
+/* PDF стили */
+.result-container {
+    display: none;
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    padding: 5mm;
+    box-sizing: border-box;
+}
+
+.result-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.result-half {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pdf-content {
+    display: flex;
+    gap: 10px;
+    height: auto;
+}
+
+.pdf-key-container {
+    padding: 5px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #2c3e50;
+    column-count: 2;
+    column-gap: 10px;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.writing-lines {
+    margin-top: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.writing-lines .line {
+    height: 1px;
+    background: #000;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.cut-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 100%;
+    position: relative;
+    margin: 5px 0;
+}
+
+.solid-line {
+    flex: 1;
+    height: 1px;
+    background: #000;
+}
+
+.cut-line i {
+    margin: 0 10px;
+    color: #e74c3c;
+    background: white;
+    padding: 0 8px;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    .grid-and-key {
+        flex-direction: column;
+    }
+    .pdf-content {
+        flex-direction: column;
+    }
+    .key-container, .pdf-key-container {
+        width: 100%;
+    }
+}

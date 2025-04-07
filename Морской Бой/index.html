@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифровальщик "Морской Бой"</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">✕</div>
+            <div class="modal-text">
+                <h2>Правила шифрования</h2>
+                <p>Помните игру "Морской бой"? Здесь тот же принцип. Текст прячем в сетке с буквами и даем ключ к разгадке.</p>
+                <ol>
+                    <li>Введите текст (до 40 символов)</li>
+                    <li>Нажмите "Зашифровать"</li>
+                    <li>Получите ключ и сетку</li>
+                    <li>Нажмите "Скачать PDF" для сохранения</li>
+                </ol>
+                <p class="rules">Пример ключа: 1) А-9 — первая буква на пересечении столбца А и строки 9.</p>
+            </div>
+            <button class="dont-show">Больше не показывать</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="header">
+            <div class="header-buttons">
+                <a href="../index.html" class="back-button">←</a>
+                <button class="help-button">?</button>
+            </div>
+            <h1><i class="fas fa-anchor"></i> Шифровальщик "Морской Бой"</h1>
+        </div>
+        <div class="content">
+            <div class="input-section">
+                <textarea id="inputText" placeholder="Введите текст здесь (максимум 40 символов)..."></textarea>
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+
+            <button id="encryptBtn"><i class="fas fa-lock"></i> Зашифровать</button>
+
+            <div id="resultArea">
+                <div class="grid-and-key">
+                    <div id="gridContainer" class="grid-container"></div>
+                    <div id="keyContainer" class="key-container"></div>
+                </div>
+                <div id="resultContainer" class="result-container">
+                    <div class="result-page">
+                        <div class="result-half">
+                            <div class="pdf-content">
+                                <div id="pdfGridContainer" class="pdf-grid-container"></div>
+                                <div id="pdfKeyContainer" class="pdf-key-container"></div>
+                            </div>
+                            <div class="writing-lines"></div>
+                        </div>
+                        <div class="cut-line">
+                            <div class="solid-line"></div>
+                            <i class="fas fa-cut"></i>
+                            <div class="solid-line"></div>
+                        </div>
+                        <div class="result-half">
+                            <div class="pdf-content">
+                                <div id="pdfGridContainerCopy" class="pdf-grid-container"></div>
+                                <div id="pdfKeyContainerCopy" class="pdf-key-container"></div>
+                            </div>
+                            <div class="writing-lines"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="downloadBtn" style="display: none;"><i class="fas fa-file-pdf"></i> Скачать PDF</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
