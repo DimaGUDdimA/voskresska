@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифровальщик "Морской Бой"</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <div class="close-modal">✕</div>
+            <div class="modal-text">
+                <h2>Найди отличия</h2>
+                <p>Здесь вы можете зашифровать библейский стих двумя сетками. Правила простые:</p>
+                <ol>
+                    <li>Сравниваем поочередно ячейки в двух сетках</li>
+                    <li>Те что одинаковые - зачеркиваем</li>
+                    <li>Оставшиеся буквы в первой сетке и есть стих!</li>
+                    <li>Читается верху вниз слева направо</li>
+                </ol>
+                <div class="rules">
+                    <p>1. Введите стих</p>
+                    <p>2. Нажмите "Зашифровать"</p>
+                    <p>3. Нажмите "Скачать PDF"</p>
+                    <p>Скачанный файл можно распечатать, проверить и дать детям для расшифровки!</p>
+                </div>
+            </div>
+            <button class="dont-show">Больше не показывать</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="header">
+            <div class="header-buttons">
+                <a href="../index.html" class="back-button">←</a>
+                <button class="help-button">?</button>
+            </div>
+            <h1><i class="fas fa-anchor"></i> Шифровальщик "Морской Бой"</h1>
+        </div>
+        <div class="content">
+            <div class="input-section">
+                <textarea id="inputText" placeholder="Введите стих здесь (максимум 55 символов)..."></textarea>
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+
+            <button id="encryptBtn"><i class="fas fa-lock"></i> Зашифровать</button>
+
+            <div id="resultArea">
+                <div class="grid-pair">
+                    <div id="gridContainer1" class="grid-container"></div>
+                    <div id="gridContainer2" class="grid-container"></div>
+                </div>
+                
+                <div id="pdfContainer" style="display: none;">
+                    <div class="pdf-page">
+                        <div class="pdf-grid-pair">
+                            <div id="pdfGridContainer1" class="pdf-grid-container"></div>
+                            <div id="pdfGridContainer2" class="pdf-grid-container"></div>
+                        </div>
+                        <div class="lines-container">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div class="cut-line">
+                        <div class="scissors">✄</div>
+                    </div>
+                    <div class="pdf-page">
+                        <div class="pdf-grid-pair">
+                            <div id="pdfGridContainer3" class="pdf-grid-container"></div>
+                            <div id="pdfGridContainer4" class="pdf-grid-container"></div>
+                        </div>
+                        <div class="lines-container">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div class="cut-line">
+                        <div class="scissors">✄</div>
+                    </div>
+                    <div class="pdf-page">
+                        <div class="pdf-grid-pair">
+                            <div id="pdfGridContainer5" class="pdf-grid-container"></div>
+                            <div id="pdfGridContainer6" class="pdf-grid-container"></div>
+                        </div>
+                        <div class="lines-container">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="downloadBtn" style="display: none;"><i class="fas fa-file-pdf"></i> Скачать PDF</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation for the gradient background */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 5% auto;
+    padding: 30px;
+    /* Existing background retained */
+    background: url('file:///C:/Users/user_72/Desktop/прог/все%20вместе/Отличия/фон.png') center/cover no-repeat, #f9f4e6;
+    border-radius: 15px;
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border: 3px solid #e1c699;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #5a3d2b;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(249, 244, 230, 0.8);
+}
+
+.modal-text h2 {
+    color: #8b4513;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.rules {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(240, 230, 204, 0.9);
+    border-radius: 10px;
+    border-left: 5px solid #d4a76a;
+}
+
+.rules p {
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e74c3c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.dont-show {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background: #d4a76a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.dont-show:hover {
+    background: #b38b5a;
+    transform: scale(1.05);
+}
+
+/* Applying the gradient background and animation to the body */
+body {
+    font-family: 'Comic Sans MS', 'Marker Felt', 'Arial Rounded MT Bold', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee); /* Background from the first block */
+    background-size: 400% 400%; /* Background size for animation */
+    animation: gradientBG 15s ease infinite; /* Animation from the first block */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 900px;
+    background: #fff9e6;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #e1c699;
+    margin: 20px 0;
+}
+
+.header {
+    background: linear-gradient(45deg, #8b4513, #d4a76a);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    border-bottom: 3px solid #b38b5a;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: 0 60px;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.back-button, .help-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff9e6;
+    color: #8b4513;
+    border: 2px solid #b38b5a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.back-button:hover, .help-button:hover {
+    background: #e1c699;
+    transform: scale(1.1);
+}
+
+.content {
+    padding: 25px;
+}
+
+.input-section textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    border: 3px solid #e1c699;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    resize: vertical;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff9e6;
+    box-shadow: inset 0 0 8px rgba(139, 69, 19, 0.1);
+}
+
+.input-section textarea:focus {
+    outline: none;
+    border-color: #d4a76a;
+    box-shadow: 0 0 8px rgba(210, 105, 30, 0.4);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #fde8e8;
+    border-radius: 10px;
+    border: 2px dashed #e74c3c;
+    display: none;
+}
+
+#encryptBtn, #downloadBtn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: inherit;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#encryptBtn {
+    background: #8b4513;
+    color: white;
+}
+
+#encryptBtn:hover {
+    background: #a0522d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+#downloadBtn {
+    background: #27ae60;
+    color: white;
+}
+
+#downloadBtn:hover {
+    background: #2ecc71;
+    transform: translateY(-2px);
+    box-shadow: 6px 12px rgba(0,0,0,0.3);
+}
+
+.grid-pair {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(13, minmax(25px, auto));
+    gap: 4px;
+    width: fit-content;
+}
+
+.grid-cell {
+    border: 2px solid #FF9800;
+    height: 25px;
+    min-width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background-color: #FFF3E0;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+    font-weight: bold;
+    color: #5a3d2b;
+}
+
+.grid-cell:hover {
+    transform: scale(1.1);
+    background: #FFE0B2;
+}
+
+.grid-header {
+    background-color: #FF9800;
+    color: white;
+    border: 2px solid #F57C00;
+    font-weight: bold;
+}
+
+/* PDF стили */
+#pdfContainer {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    padding: 3mm;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.pdf-page {
+    width: 180mm;
+    height: 95mm; /* Высота одной копии */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Равномерное распределение по высоте */
+}
+
+.pdf-grid-pair {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.2mm;
+    margin: 0; /* Убрали отступы */
+    padding: 0;
+    height: 80mm; /* Высота сетки */
+}
+
+.pdf-grid-container {
+    display: grid;
+    grid-template-columns: repeat(13, 6.15mm); /* Ширина ячейки */
+    grid-template-rows: repeat(13, 6.15mm); /* Высота ячейки */
+    gap: 0.2mm;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+.lines-container {
+    width: 100%;
+    margin: 0; /* Убрали отступы */
+    padding: 0;
+}
+
+.line {
+    width: 100%;
+    height: 1mm;
+    border-bottom: 1px dashed #ccc;
+    margin: 2mm 0; /* Уменьшили отступ */
+    padding: 0;
+}
+
+/* Скрываем вторую линию */
+.lines-container .line:nth-child(2) {
+    display: none;
+}
+
+.cut-line {
+    width: 100%;
+    border-top: 1px dashed #ff5722;
+    margin: 2mm 0; /* Уменьшили отступ */
+    text-align: center;
+    position: relative;
+}
+
+.scissors {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 5mm;
+    color: #ff5722;
+    font-size: 12px;
+}
+
+.pdf-grid-container .grid-cell {
+    width: 6.15mm;
+    height: 6.15mm;
+    font-size: 2.5mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #4CAF50;
+    background-color: #FFF3E0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.pdf-grid-container .grid-header {
+    background-color: #FF9800;
+    color: white;
+    border: 1px solid #F57C00;
+    margin: 0;
+    padding: 0;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #pdfContainer, #pdfContainer * {
+        visibility: visible;
+    }
+    #pdfContainer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 210mm;
+        height: auto;
+        margin: 0;
+        padding: 5mm;
+    }
+
+    .pdf-page {
+        page-break-after: always;
+        height: auto;
+    }
+
+    .pdf-page:last-child {
+        page-break-after: auto;
+    }
+}
+
+/* Блокировка мобильных - Added back the media query from the first block */
+@media (max-width: 768px) {
+    .modal {
+        display: none !important;
+    }
+    .help-button {
+        display: none !important;
+    }
+}
