@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+/* Добавим EB Garamond, если он не был добавлен ранее */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+/* Анимация для градиентного фона (из первого блока) */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Общие стили */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Шрифт основного окна - EB Garamond */
+    font-family: 'EB Garamond', serif;
+    /* Градиентная заливка всей страницы из первого блока */
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee); /* Взято из первого блока */
+    background-size: 400% 400%; /* Взято из первого блока */
+    animation: gradientBG 15s ease infinite; /* Взято из первого блока (продолжительность 15s) */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    /* Градиент для контейнера, если нужен отдельный */
+    background: linear-gradient(135deg, #ffffff, #f9f9f9, #e9e9e9, #d9d9d9);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Шрифт H1 в основном окне также EB Garamond, наследуется от body */
+    font-family: 'EB Garamond', serif;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #3498db;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    /* Шрифт кнопки в основном окне EB Garamond, наследуется от body */
+    font-family: 'EB Garamond', serif;
+}
+
+.back-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.help-icon {
+    width: 30px;
+    height: 30px;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.help-icon:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+.instructions {
+    background: linear-gradient(135deg, #e9f5ff, #d6e9ff, #c3ddff, #b0d1ff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #34495e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Шрифт инструкций в основном окне EB Garamond, наследуется от body */
+    font-family: 'EB Garamond', serif;
+}
+
+.instructions:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    resize: none;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    /* Шрифт textarea в основном окне EB Garamond, наследуется от body */
+    font-family: 'EB Garamond', serif;
+}
+
+textarea:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #3498db, #2980b9, #1c6ea4, #105a8e);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+    /* Шрифт кнопки в основном окне EB Garamond, наследуется от body */
+    font-family: 'EB Garamond', serif;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    transform: translateY(-2px);
+}
+
+.results {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    padding: 15px;
+    background: linear-gradient(135deg, #f9f9f9, #e9e9e9, #d9d9d9, #c9c9c9);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    word-wrap: break-word;
+    /* Шрифт результатов в основном окне EB Garamond, наследуется от body */
+    font-family: 'EB Garamond', serif;
+}
+
+.results:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+#downloadSection {
+    margin-top: 20px;
+    display: none;
+    text-align: center;
+    /* Шрифт секции загрузки в основном окне EB Garamond, наследуется от body */
+    font-family: 'EB Garamond', serif;
+}
+
+#downloadSection label {
+    font-size: 1rem;
+    margin-right: 10px;
+    color: #34495e;
+    display: inline-block;
+    margin-bottom: 10px;
+    /* Шрифт метки в основном окне EB Garamond */
+    font-family: 'EB Garamond', serif;
+}
+
+#downloadSection input {
+    padding: 8px;
+    font-size: 1rem;
+    width: 80px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    margin-right: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    display: inline-block;
+    /* Шрифт инпута в основном окне EB Garamond */
+    font-family: 'EB Garamond', serif;
+}
+
+#downloadSection input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+#downloadButton {
+    background: linear-gradient(135deg, #27ae60, #219653, #1a7e3f, #13662b);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    margin-top: 0;
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+    /* Шрифт кнопки в основном окне EB Garamond, наследуется от body */
+    font-family: 'EB Garamond', serif;
+}
+
+#downloadButton:hover {
+    background: linear-gradient(135deg, #219653, #27ae60);
+    transform: translateY(-2px);
+}
+
+
+/* === Стили модального окна === */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Позволяет прокручивать модальное окно, если контент не умещается (для общих целей, не для text-content) */
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.modal.visible {
+    display: flex;
+}
+
+.modal-book-container {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    max-height: 90vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    box-sizing: border-box;
+}
+
+.book-wrapper {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    aspect-ratio: 1.75;
+    margin: auto;
+    flex-shrink: 0;
+}
+
+.book-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none; /* Игнорировать клики на изображении */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-overlay h2 {
+    /* Шрифт заголовка в модальном окне */
+    font-family: 'Marck Script', cursive;
+    font-size: 2.2em;
+    color: #000;
+    text-align: center;
+    position: absolute;
+    width: 45%;
+    left: 4%;
+    /* Поднимаем заголовок выше */
+    top: 1.5%;
+    z-index: 10;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    margin: 0;
+    padding: 0;
+}
+
+.text-content {
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    position: relative;
+    left: 5%;
+    width: 90%;
+    /* Пересчитываем top и height, чтобы text-content начинался ниже заголовка */
+    top: 8%;
+    height: 87%;
+    box-sizing: border-box;
+    padding: 0;
+    /* Убираем прокрутку из text-content - все должно вмещаться */
+    overflow-y: hidden; /* Изменено с auto */
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку на всякий случай */
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    position: absolute;
+    top: 0.5%;
+    right: 0.5%;
+    color: #ff0000;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    line-height: 1;
+    z-index: 1002;
+}
+
+.close:hover {
+    color: #cc0000;
+    transform: scale(1.1);
+}
+
+.text-columns {
+    display: flex;
+    flex-direction: row;
+    gap: 6.6%;
+    width: 100%;
+    flex-grow: 1;
+    margin: 0 auto;
+    padding-bottom: 0.5em;
+    box-sizing: border-box;
+    /* Убираем прокрутку из text-columns */
+    overflow-y: hidden; /* Изменено с visible */
+}
+
+.text-column {
+    /* Шрифт текста в модальном окне */
+    font-family: 'Marck Script', cursive;
+    flex: 1;
+    font-size: 1.4em;
+    line-height: 1.7;
+    padding: 1em 1.5em;
+    box-sizing: border-box;
+    text-align: left;
+    /* Убираем прокрутку из text-column */
+    overflow-y: hidden; /* Изменено с visible */
+}
+
+.text-column p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.text-column ul {
+    margin-left: 2.5em;
+    padding-left: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.text-column li {
+    margin-bottom: 0.3em;
+}
+
+.modal-buttons {
+    display: flex;
+    /* Выравниваем кнопку "Не показывать" по левому краю */
+    justify-content: flex-start;
+    margin-top: 1em;
+    width: 100%;
+    padding: 0 1em;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+#dontShowAgain {
+    /* Делаем кнопку больше, левее и больше похожей на кнопку */
+    /* Шрифт кнопки в модальном окне - EB Garamond */
+    font-family: 'EB Garamond', serif; /* Добавлено */
+    background: #eee;
+    border: 1px solid #ccc;
+    color: #333;
+    width: auto;
+    padding: 0.6em 1.2em;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-left: 1em; /* Отступ слева */
+    flex-shrink: 0; /* Предотвращает сжатие кнопки */
+}
+
+#dontShowAgain:hover {
+    background: #ddd;
+    border-color: #bbb;
+    color: #000;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .text-overlay h2 {
+        position: static;
+        width: auto;
+        left: auto;
+        top: auto;
+        text-align: center;
+        margin-bottom: 1em;
+        font-size: 1.8em;
+        padding: 0 0.5em;
+        font-family: 'Marck Script', cursive;
+    }
+
+    .modal-book-container {
+        width: 90%;
+        max-height: 90vh;
+        margin-top: 2vh;
+    }
+
+    .text-content {
+        width: 90%;
+        left: 5%;
+        /* Пересчитываем top и height для меньшего экрана */
+        top: 5%;
+        height: 90%;
+        padding: 0.8em;
+        /* Убираем прокрутку */
+        overflow-y: hidden; /* Изменено с auto */
+    }
+
+    .text-columns {
+        flex-direction: column;
+        gap: 1em;
+        /* Убираем прокрутку */
+        overflow-y: hidden; /* Изменено с visible */
+    }
+     .text-column {
+        padding: 0 0.8em;
+        font-family: 'Marck Script', cursive;
+        font-size: 1.2em;
+        line-height: 1.6;
+        /* Убираем прокрутку */
+        overflow-y: hidden; /* Изменено с visible */
+    }
+
+     #dontShowAgain {
+        font-size: 1em;
+        padding: 0.5em 1em;
+        margin-left: 0; /* Убираем отступ слева в мобильной версии */
+        font-family: 'EB Garamond', serif;
+    }
+     .close {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+     .text-overlay h2 {
+        font-size: 1.5em;
+        padding: 0 0.5em;
+        font-family: 'Marck Script', cursive;
+    }
+     .modal-book-container {
+        width: 95%;
+        max-height: 85vh;
+        margin-top: 2vh;
+    }
+     .text-content {
+        width: 96%;
+        left: 2%;
+        /* Пересчитываем top и height */
+        top: 2%;
+        height: 96%;
+        padding: 0.5em;
+        /* Убираем прокрутку */
+        overflow-y: hidden; /* Изменено с auto */
+    }
+     .text-columns {
+        flex-direction: column;
+        gap: 1em;
+        /* Убираем прокрутку */
+        overflow-y: hidden; /* Изменено с visible */
+    }
+     .text-column {
+        padding: 0 0.5em;
+        font-size: 1.1em;
+        line-height: 1.6;
+        /* Убираем прокрутку */
+        overflow-y: hidden; /* Изменено с visible */
+        /* font-family наследуется */
+    }
+
+     #dontShowAgain {
+        font-size: 0.9em;
+        padding: 0.4em 0.8em;
+        margin-left: 0; /* Убираем отступ слева */
+        font-family: 'EB Garamond', serif;
+    }
+     .close {
+        font-size: 2em;
+    }
+ }

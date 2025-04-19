@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск слов в Библии</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/pizzip@3.1.0/dist/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.30.0/docxtemplater.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div id="instructionModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-book-container">
+            <div class="book-wrapper">
+                <img src="КНИГА.png" alt="Библия" class="book-image">
+                <div class="text-overlay">
+                    <div class="text-content">
+                        <span class="close">&times;</span>
+                        <h2>Шифровка с помощью Библии</h2>
+                        <div class="text-columns">
+                            <div class="text-column">
+                                <p>Здесь вы можете зашифровать библейский стих, используя саму же Библию! Это не только увлекательно, но и помогает детям лучше ориентироваться в Священном Писании.</p>
+                                <p>Введите текст в поле и нажмите кнопку "Найти слова" — система преобразует текст в ссылки из Библии.</p>
+                                <p>После обработки появится текст такого формата: "1) Луки 1:1 (7);" где:</p>
+                                <ul>
+                                    <li>Цифра 1 со скобкой — порядковый номер слова в разгадываемом стихе</li>
+                                    <li>Ссылка — место, которое должны открыть дети, чтобы отгадать первое слово</li>
+                                </ul>
+                            </div>
+                            <div class="text-column">
+                                <ul>
+                                    <li>Цифра в скобках — номер слова в стихе, которое соответствует зашифрованному</li>
+                                </ul>
+                                <p>Укажите количество детей, для которых будут разгадывать шифр. Это нужно для автоматического распределения копий на листе с линиями отрывков. Нажмите «Скачать результаты», чтобы сохранить файл. Это редактируемый файл. Его можно распечатать, проверить и дать детям для расшифровки!</p>
+                                <p><strong>Пример:</strong> мы написали "1-е Иоанна 1:6 'Если мы говорим...'". Нажали "Найти слова". Получили ссылки. Первая: "1) Иезекииль 2:6 (13);". Открываем это место, ищем тринадцатое слово — это слово "если". Мы отгадали первое слово! И так далее.</p>
+                            </div>
+                        </div>
+                        <div class="modal-buttons">
+                            <button id="dontShowAgain">Больше не показывать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div class="container">
+        <h1>Поиск слов в Библии</h1>
+        <div class="header-buttons">
+            <a href="../index.html" class="back-button">Назад</a>
+            <div class="help-icon" id="helpIcon">?</div>
+        </div>
+        <div class="instructions">
+            <p>Введите текст в поле ниже. Нажмите "Найти слова", чтобы найти слова в Библии.</p>
+            <p>Результаты будут отображены ниже. Вы можете скачать их в формате Word, указав количество копий.</p>
+        </div>
+        <textarea id="inputText" placeholder="Введите стих из Библии..."></textarea>
+        <button id="searchButton">Найти слова</button>
+        <div id="results" class="results"></div>
+        <div id="downloadSection" style="display: none;">
+            <label for="copies">Количество копий (сколько экземпляров хотите получить?):</label>
+            <input type="number" id="copies" min="1" value="1">
+            <button id="downloadButton">Скачать результаты</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
